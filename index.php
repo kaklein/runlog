@@ -35,7 +35,7 @@
             <div class="form-container inline-block">
                 <fieldset>
                     <legend><h2>Add a run</h2></legend>
-                    <form action="">
+                    <form action="insert.php" method="post">
                         <div class="form-field">
                             <label for="date">Date:</label>
                             <input type="date" id="date" name="date">
@@ -83,6 +83,20 @@
                         <th>Time</th>
                         <th>Average pace</th>
                     </tr>
+
+                    <!-- SQL query to display data from 'runs' table -->
+                    <!-- TO DO: update to only show data for specific user -->
+                    <?php
+                        // query database for variables
+                        $sql = 'SELECT date, run_type, distance, time, average_pace FROM runs';
+                        foreach($conn->query($sql) as $row) {
+                            echo "<tr>", "<td>", $row['date'], "</td>";
+                            echo "<td>", $row['run_type'], "</td>";
+                            echo "<td>", $row['distance'], "</td>";
+                            echo "<td>", $row['time'], "</td>";
+                            echo "<td>", $row['average_pace'], "</td>", "</tr>";
+                        }
+                    ?>
                 </table>
             </div>
 
