@@ -1,6 +1,5 @@
 # RUN LOG
 <h4>Author: Katie Klein</h4>
-<h4>Date started: 10 Sep 2021</h4>
 
 <br>
 <p>Run Log is a simple web app to log running activities and view past data.</p>
