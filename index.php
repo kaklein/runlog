@@ -27,83 +27,78 @@
     </head>
 
     <body>
-        <div id="logo">
+        <div class="logo">
             <h1>RUN LOG</h1>
         </div>
 
-        <div id="add-run-form">
-            <fieldset>
-                <legend><h2>Add a run</h2></legend>
-                <form action="">
-                    <div class="form-field">
-                        <label for="date">Date</label>
-                        <input type="date" id="date" name="date">
-                    </div>
+        <div class="main-content">
+            <div class="form-container inline-block">
+                <fieldset>
+                    <legend><h2>Add a run</h2></legend>
+                    <form action="">
+                        <div class="form-field">
+                            <label for="date">Date:</label>
+                            <input type="date" id="date" name="date">
+                        </div>
 
-                    <div class="form-field">
-                        <label for="run-type">Run Type</label>
-                        <select id="run-type" name="run-type">
-                            <option value="easy">Easy</option>
-                            <option value="speedwork">Speedwork</option>
-                            <option value="tempo">Tempo</option>
-                            <option value="long">Long Run</option>
-                        </select>
-                    </div>
+                        <div class="form-field">
+                            <label for="run-type">Run Type:</label>
+                            <select id="run-type" name="run-type">
+                                <option value="easy">Easy</option>
+                                <option value="speedwork">Speedwork</option>
+                                <option value="tempo">Tempo</option>
+                                <option value="long">Long Run</option>
+                            </select>
+                        </div>
 
-                    <div class="form-field">
-                        <label for="distance">Distance (miles)</label>
-                        <input type="number" id="distance" name="distance" step=".1">
-                    </div>
+                        <div class="form-field">
+                            <label for="distance">Distance (miles):</label>
+                            <input type="number" id="distance" name="distance" step=".1">
+                        </div>
 
-                    <div class="form-field">
-                        <label for="time">Time</label>
-                        <input type="text" id="time" name="time">
-                    </div>
+                        <div class="form-field">
+                            <label for="time">Time:</label>
+                            <input type="text" id="time" name="time">
+                        </div>
 
-                    <div class="form-field">
-                        <label for="average-pace">Average pace</label>
-                        <input type="text" id="average-pace" name="average-pace">
-                    </div>
+                        <div class="form-field">
+                            <label for="average-pace">Average pace:</label>
+                            <input type="text" id="average-pace" name="average-pace">
+                        </div>
 
-                    <div class="form-field">
-                        <input type="submit" name="add-run" value="Add Run">
-                    </div>
-                </form>
-            </fieldset>
-        </div>
-            
-        <div id="run-log-table">
-            <table>
-                <tr><h2>Logged runs</h2></tr>
-                <tr>
-                    <th>Date</th>
-                    <th>Run type</th>
-                    <th>Distance (miles)</th>
-                    <th>Time</th>
-                    <th>Average pace</th>
-                </tr>
-                <tr>
-                    <td>9/1/21</td>
-                    <td>Easy</td>
-                    <td>5</td>
-                    <td>60:01</td>
-                    <td>12:02</td>
-                </tr>
-            </table>
-        </div>
-
-        <div id="side-bar">
-            <h2 id="side-bar-header">Quick Stats</h2>
-            <div class="side-bar-stat">
-                <p>Miles this week:</p>
+                        <div class="form-field">
+                            <input type="submit" name="add-run" value="Add Run">
+                        </div>
+                    </form>
+                </fieldset>
             </div>
-            <div class="side-bar-stat">
-                <p>Miles this month:</p>
-            </div>
-            <div class="side-bar-stat">
-                <p>Miles this year:</p>
+                
+            <div class="data-display-container inline-block">
+                <table>
+                    <tr><h2>Logged runs</h2></tr>
+                    <tr>
+                        <th>Date</th>
+                        <th>Run type</th>
+                        <th>Distance (miles)</th>
+                        <th>Time</th>
+                        <th>Average pace</th>
+                    </tr>
+                </table>
             </div>
 
+            <div class="side-bar inline-block">
+                <h2 class="side-bar-header">Quick Stats</h2>
+                <div class="side-bar-stat">
+                    <p>Miles this week: <span id="weekly-distance"> </span></p>
+                </div>
+                <div class="side-bar-stat">
+                    <p>Miles this month: <span id="monthly-distance"> </span></p>
+                </div>
+                <div class="side-bar-stat">
+                    <p>Miles this year: <span id="yearly-distance"> </span></p>
+                </div>
+
+            </div>
         </div>
     </body>
 </html>
