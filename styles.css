@@ -59,6 +59,17 @@ form {
     padding: 10px;
 }
 
+table {
+    border-collapse: collapse;
+    border: 1px solid blue;
+}
+
+th, td {
+    border: 1px solid blue;
+    padding: 5px;
+    text-align: left;
+}
+
 .side-bar {
     border: 1px solid lime;
     margin: 15px;
