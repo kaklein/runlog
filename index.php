@@ -44,10 +44,10 @@
                         <div class="form-field">
                             <label for="run-type">Run Type:</label>
                             <select id="run-type" name="run-type">
-                                <option value="easy">Easy</option>
-                                <option value="speedwork">Speedwork</option>
-                                <option value="tempo">Tempo</option>
-                                <option value="long">Long Run</option>
+                                <option value="Easy">Easy</option>
+                                <option value="Speedwork">Speedwork</option>
+                                <option value="Tempo">Tempo</option>
+                                <option value="Long Run">Long Run</option>
                             </select>
                         </div>
 
@@ -56,14 +56,20 @@
                             <input type="number" id="distance" name="distance" step=".1">
                         </div>
 
-                        <div class="form-field">
+                        <div class="form-field-group">
                             <label for="time">Time:</label>
-                            <input type="text" id="time" name="time">
-                        </div>
-
-                        <div class="form-field">
-                            <label for="average-pace">Average pace:</label>
-                            <input type="text" id="average-pace" name="average-pace">
+                            <div class="sub-form-field">
+                                <input type="number" id="time-hours" name="time-hours" min="0" max="23" placeholder="00">
+                                <label for="time-hours">hr</label>
+                            </div>
+                            <div class="sub-form-field">
+                                <input type="number" id="time-minutes" name="time-minutes" min="0" max="59" placeholder="00" >
+                                <label for="time-minutes">min</label>
+                            </div>
+                            <div class="sub-form-field">
+                                <input type="number" id="time-seconds" name="time-seconds" min="0" max="59" placeholder="00">
+                                <label for="time-seconds">sec</label>
+                            </div>
                         </div>
 
                         <div class="form-field">
@@ -88,12 +94,12 @@
                     <!-- TO DO: update to only show data for specific user -->
                     <?php
                         // query database for variables
-                        $sql = 'SELECT date, run_type, distance, time, average_pace FROM runs';
+                        $sql = 'SELECT date, run_type, distance, time_hours, time_minutes, time_seconds, average_pace FROM runs';
                         foreach($conn->query($sql) as $row) {
                             echo "<tr>", "<td>", $row['date'], "</td>";
                             echo "<td>", $row['run_type'], "</td>";
                             echo "<td>", $row['distance'], "</td>";
-                            echo "<td>", $row['time'], "</td>";
+                            echo "<td>", $row['time_hours'], ":", $row['time_minutes'], ":", $row['time_seconds'], "</td>";
                             echo "<td>", $row['average_pace'], "</td>", "</tr>";
                         }
                     ?>
