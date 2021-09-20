@@ -36,9 +36,14 @@ form {
     text-align: right;
 }
 
-.form-field {
+.form-field, .form-field-group {
     margin: 10px;
     padding: 10px;
+    border: 1px solid gold;
+}
+
+.sub-form-field {
+    display: inline-block;
 }
 
 #run-type {
@@ -66,7 +71,7 @@ table {
 
 th, td {
     border: 1px solid blue;
-    padding: 5px;
+    padding: 10px;
     text-align: left;
 }
 
