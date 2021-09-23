@@ -16,21 +16,29 @@
         }
         return $conn;
     }
-?>
 
+//SQL query to display data from 'runs' table
+//TO DO: update to only show data for specific user
 
-<!-- SQL query to display data from 'runs' table -->
-<!-- TO DO: update to only show data for specific user -->
-<?php
-    function displayData($conn) {
+    function displayRunsTable($conn) {
         // query database for variables
-        $sql = 'SELECT date, run_type, distance, time_hours, time_minutes, time_seconds, average_pace FROM runs';
+        $sql = 'SELECT date, run_type, distance, time_hours, time_minutes, time_seconds, average_pace FROM runs ORDER BY date DESC';
         foreach($conn->query($sql) as $row) {
             echo "<tr>", "<td>", $row['date'], "</td>";
             echo "<td>", $row['run_type'], "</td>";
             echo "<td>", $row['distance'], "</td>";
-            echo "<td>", $row['time_hours'], ":", $row['time_minutes'], ":", $row['time_seconds'], "</td>";
+            echo "<td>", sprintf("%02d", $row['time_hours']), ":", sprintf("%02d", $row['time_minutes']), ":", sprintf("%02d", $row['time_seconds']), "</td>";
             echo "<td>", $row['average_pace'], "</td>", "</tr>";
         }
     }
+
+    function displayUserStats($conn) {
+        $sql = 'SELECT week_distance, month_distance, year_distance FROM users WHERE id = 1';
+        foreach($conn->query($sql) as $row) {
+            echo "<p>This week: ", $row['week_distance'], " miles</p>";
+            echo "<p>This month: ", $row['month_distance'], " miles</p>";
+            echo "<p>This year: ", $row['year_distance'], " miles</p>";
+        }
+    }
+
 ?>
