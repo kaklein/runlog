@@ -3,25 +3,14 @@
 
 <head>
     <title>Insert Data</title>
+    <?php
+        include('getdata.php');
+    ?>
 </head>
 
 <body>
     <?php
-        // Connect to MySQL database using PDO driver (code from https://www.w3schools.com/php/php_mysql_connect.asp)
-
-        $servername = '127.0.0.1';
-        $username = 'runlog_user';
-        $password = 'run4FUN';
-        $db = 'runlog';
-
-        try {
-            $conn = new PDO("mysql:host=$servername;dbname=$db", $username, $password);
-            // set the PDO error mode to exception
-            $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-            echo "Connected successfully";
-        } catch(PDOException $e) {
-            echo "Database connection failed: " . $e->getMessage();
-        }
+        $conn = connectToDatabase();
 
         // Function to calculate pace
         function calculatePace($distance, $hrs, $mins, $secs) {
