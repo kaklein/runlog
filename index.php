@@ -7,6 +7,7 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Nova+Round&display=swap" rel="stylesheet">
         <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
         <?php
             include('getdata.php');
@@ -18,13 +19,11 @@
             <h1>RUN LOG</h1>
         </div>
         
-        <iframe name="invisible-frame" id="invisible-frame" style="display: none;"></iframe>
-
         <div class="main-content">
             <div class="form-container inline-block">
                 <fieldset>
                     <legend><h2>Add a run</h2></legend>
-                    <form action="insert.php" method="post" target="invisible-frame">
+                    <form id="data-form" onsubmit="submitForm()">
                         <div class="form-field">
                             <label for="date">Date:</label>
                             <input type="date" id="date" name="date">
@@ -82,7 +81,7 @@
                 <!-- PHP code to get data from database -->
                 <?php
                     $conn = connectToDatabase();
-                    displayData($conn);
+                    displayRunsTable($conn);
                 ?>
 
                 </table>
@@ -90,17 +89,22 @@
 
             <div class="side-bar inline-block">
                 <h2 class="side-bar-header">Quick Stats</h2>
-                <div class="side-bar-stat">
-                    <p>Miles this week: <span id="weekly-distance"> </span></p>
-                </div>
-                <div class="side-bar-stat">
-                    <p>Miles this month: <span id="monthly-distance"> </span></p>
-                </div>
-                <div class="side-bar-stat">
-                    <p>Miles this year: <span id="yearly-distance"> </span></p>
-                </div>
+                <?php
+                    displayUserStats($conn);
+                ?>
 
             </div>
         </div>
+
+        <!-- function to submit form -->
+        <script>
+            function submitForm(){
+                $.ajax({
+                    url: 'insert.php',
+                    type: 'post',
+                    data: $('#data-form').serialize()
+                });
+            }
+        </script>
     </body>
 </html>
