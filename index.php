@@ -27,7 +27,7 @@
                     <legend><h2>Add a run</h2></legend>
                     <form id="data-form" onsubmit="submitForm()">
                         <div class="form-field">
-                            <label for="date">Date:</label>
+                            <label for="run-date">Date:</label>
                             <input type="date" id="run-date" name="run-date">
                         </div>
 
