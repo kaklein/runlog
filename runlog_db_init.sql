@@ -15,7 +15,7 @@ To initialize the database:
 DROP USER IF EXISTS 'runlog_user'@'localhost';
 
 -- Create user and grant privileges
-CREATE USER 'runlog_user'@'localhost' IDENTIFIED BY 'pass';
+CREATE USER 'runlog_user'@'localhost' IDENTIFIED WITH mysql_native_password BY 'run4FUN';
 GRANT ALL PRIVILEGES ON runlog.* TO 'runlog_user'@'localhost';
 
 -- Create and use database
@@ -41,7 +41,7 @@ CREATE TABLE users (
 CREATE TABLE runs (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
     user_id INT UNSIGNED NOT NULL,
-    date DATE NOT NULL,
+    run_date DATE NOT NULL,
     run_type VARCHAR(12) NOT NULL,
     distance FLOAT(4,1) NOT NULL,
     time_hours INT NOT NULL,
