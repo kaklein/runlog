@@ -1,6 +1,6 @@
 <?php
 
-    include ('getdata.php');
+    include ('connect.php');
 
     $conn = connectToDatabase();
 

@@ -4,7 +4,7 @@
 <head>
     <title>Insert Data</title>
     <?php
-        include('getdata.php');
+        include('connect.php');
     ?>
 </head>
 
@@ -34,7 +34,7 @@
 
         // Get values from form input
         if($_SERVER['REQUEST_METHOD'] == 'POST') {
-            $date = $_REQUEST['date'];
+            $run_date = $_REQUEST['run-date'];
             $run_type = $_REQUEST['run-type'];
             $distance = $_REQUEST['distance'];
             $time_hours = $_REQUEST['time-hours'];
@@ -46,8 +46,8 @@
             $average_pace = calculatePace($distance, $time_hours, $time_minutes, $time_seconds);
         }
 
-        $sqlRunsData = "INSERT INTO runs (user_id, date, run_type, distance, time_hours, time_minutes, time_seconds, average_pace)
-        VALUES (1, '$date', '$run_type', '$distance', '$time_hours', '$time_minutes', '$time_seconds', '$average_pace')"; // user_id is currently hardcoded
+        $sqlRunsData = "INSERT INTO runs (user_id, run_date, run_type, distance, time_hours, time_minutes, time_seconds, average_pace)
+        VALUES (1, '$run_date', '$run_type', '$distance', '$time_hours', '$time_minutes', '$time_seconds', '$average_pace')"; // user_id is currently hardcoded
 
 
         //TO DO: 
@@ -78,8 +78,8 @@
                 FROM runs
                 WHERE user_id = 1
                     AND CASE
-                            WHEN WEEKDAY(now()) = 6 THEN date = CURDATE()
-                            ELSE date BETWEEN (now() - INTERVAL WEEKDAY(now()) + 1 DAY) AND now()
+                            WHEN WEEKDAY(now()) = 6 THEN run_date = CURDATE()
+                            ELSE run_date BETWEEN (now() - INTERVAL WEEKDAY(now()) + 1 DAY) AND now()
                         END
                 ) runs ON users.id = runs.user_id
                 SET users.week_distance = runs.week_distance";

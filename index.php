@@ -11,6 +11,8 @@
 
         <?php
             include('getdata.php');
+            include('connect.php');
+            $conn = connectToDatabase();
         ?>
     </head>
 
@@ -26,7 +28,7 @@
                     <form id="data-form" onsubmit="submitForm()">
                         <div class="form-field">
                             <label for="date">Date:</label>
-                            <input type="date" id="date" name="date">
+                            <input type="date" id="run-date" name="run-date">
                         </div>
 
                         <div class="form-field">
@@ -80,7 +82,6 @@
                 
                 <!-- PHP code to get data from database -->
                 <?php
-                    $conn = connectToDatabase();
                     displayRunsTable($conn);
                 ?>
 
