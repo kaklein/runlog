@@ -104,6 +104,7 @@
                     type: 'post',
                     data: $('#data-form').serialize()
                 });
+                location.reload();
             }
         </script>
     </body>
