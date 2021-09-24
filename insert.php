@@ -58,7 +58,7 @@
             INNER JOIN (
                 SELECT user_id, SUM(distance) as year_distance
                 FROM runs
-                WHERE user_id = 1 AND YEAR(date) = YEAR(now())
+                WHERE user_id = 1 AND YEAR(run_date) = YEAR(now())
             ) runs ON users.id = runs.user_id
             SET users.year_distance = runs.year_distance";
 
@@ -67,7 +67,7 @@
             INNER JOIN (
                 SELECT user_id, SUM(distance) as month_distance
                 FROM runs
-                WHERE user_id = 1 AND MONTH(date) = MONTH(now())
+                WHERE user_id = 1 AND MONTH(run_date) = MONTH(now())
             ) runs ON users.id = runs.user_id
             SET users.month_distance = runs.month_distance";
 
