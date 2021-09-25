@@ -1,10 +1,10 @@
 <?php
+    include('connect.php');
+    include('update.php');
 
-    include ('connect.php');
-    include ('update.php');
-   $conn = connectToDatabase();
+    $conn = connectToDatabase();
 
-    $id = $_GET['id'];
+    $id = $_POST['deleteId'];   
     $del = 'DELETE FROM runs WHERE id="' . $id . '"';
 
     try {
@@ -15,5 +15,5 @@
     } finally {
         header("location:index.php");
         exit;
-    }
+    }     
 ?>
