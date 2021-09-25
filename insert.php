@@ -46,7 +46,7 @@
             $average_pace = calculatePace($distance, $time_hours, $time_minutes, $time_seconds);
         }
 
-        $sqlRunsData = "INSERT INTO runs (user_id, run_date, run_type, distance, time_hours, time_minutes, time_seconds, average_pace)
+        $sqlInsertRunData = "INSERT INTO runs (user_id, run_date, run_type, distance, time_hours, time_minutes, time_seconds, average_pace)
         VALUES (1, '$run_date', '$run_type', '$distance', '$time_hours', '$time_minutes', '$time_seconds', '$average_pace')"; // user_id is currently hardcoded
 
 
@@ -86,7 +86,7 @@
 
         // Insert into database
         try {
-            $conn->exec($sqlRunsData);
+            $conn->exec($sqlInsertRunData);
             $conn->exec($sqlUpdateYearDistance);
             $conn->exec($sqlUpdateMonthDistance);
             $conn->exec($sqlUpdateWeekDistance);
