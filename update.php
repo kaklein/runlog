@@ -1,9 +1,11 @@
 <?php
+//TO-DO: when different users are functional - update to select user_id based on variable
 function updateUserStats($conn) {
     $sqlUpdateYearDistance =
             "UPDATE users
             INNER JOIN (
-                SELECT user_id, SUM(distance) as year_distance
+                SELECT IFNULL(user_id, 1) as user_id,
+                    IFNULL(SUM(distance), 0) as year_distance
                 FROM runs
                 WHERE user_id = 1 AND YEAR(run_date) = YEAR(now())
             ) runs ON users.id = runs.user_id
@@ -12,7 +14,8 @@ function updateUserStats($conn) {
     $sqlUpdateMonthDistance = 
         "UPDATE users
         INNER JOIN (
-            SELECT user_id, SUM(distance) as month_distance
+            SELECT IFNULL(user_id, 1) as user_id,
+                IFNULL(SUM(distance), 0) as month_distance
             FROM runs
             WHERE user_id = 1 AND MONTH(run_date) = MONTH(now())
         ) runs ON users.id = runs.user_id
@@ -21,7 +24,8 @@ function updateUserStats($conn) {
     $sqlUpdateWeekDistance =
         "UPDATE users
         INNER JOIN (
-            SELECT user_id, SUM(distance) as week_distance
+            SELECT IFNULL(user_id, 1) as user_id,
+                IFNULL(SUM(distance), 0) as week_distance
             FROM runs
             WHERE user_id = 1
                 AND CASE
