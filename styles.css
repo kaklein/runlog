@@ -13,6 +13,7 @@ body {
     margin: auto;
     margin-top: 50px;
     margin-bottom: 50px;
+    border: 1px solid green;
 }
 
 img {
@@ -173,4 +174,38 @@ th, td {
 .quick-stats-header {
     margin: 5px;
     padding: 5px;
+}
+
+.page-number-row {
+    text-align: center;
+    border-bottom: none;
+    border-left: none;
+    border-right: none;
+}
+
+.page-number {
+    font-family: 'Inter', Tahoma, Geneva, Verdana, sans-serif;
+    color: black;
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border: 1px solid #ffb800;
+    margin: 3px;
+    border-radius: 5px;
+}
+
+.page-number:hover {
+    background-color: #ffcc6e;
+}
+
+.current-page {
+    background-color: #f7d682;
+}
+
+.disabled {
+    pointer-events: none;
+    color: rgb(75, 75, 75);
+    border: none;
 }
