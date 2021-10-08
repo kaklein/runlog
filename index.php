@@ -17,7 +17,9 @@
 
     <body>
         <div class="logo">
-            <img src="images/runlog_logo.png">
+            <a href="index.php">
+                <img src="images/runlog_logo.png">
+            </a>
         </div>
         
         <div class="main-content">
