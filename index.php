@@ -71,11 +71,11 @@
                     <div class="table-contents">
                         <table>
                             <tr>
-                                <th>Date</th>
-                                <th>Run type</th>
-                                <th>Distance (miles)</th>
-                                <th>Time</th>
-                                <th>Average pace</th>
+                                <th class="th-left-end">Date</th>
+                                <th>Run Type</th>
+                                <th>Distance<br>(miles)</th>
+                                <th>Time<br>(HH:MM:SS)</th>
+                                <th class="th-right-end">Average<br>Pace</th>
                                 <th class="no-styling"></th>
                             </tr>
                         

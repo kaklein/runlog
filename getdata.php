@@ -22,10 +22,10 @@
         $number_of_pages = ceil($number_of_results / $results_per_page);
    
         // query records
-        $sql = 'SELECT run_date, run_type, distance, time_hours, time_minutes, time_seconds, average_pace, id ' 
+        $sql = 'SELECT DATE_FORMAT(run_date, "%a %b. %e") as run_date, run_type, distance, time_hours, time_minutes, time_seconds, average_pace, id ' 
             . 'FROM runs '
             . ' WHERE user_id = 1 '
-            . 'ORDER BY run_date DESC '
+            . 'ORDER BY DATE_FORMAT(run_date, "%Y-%m-%d") DESC '
             . 'LIMIT ' . $page_first_result . ', ' . $results_per_page; // limit # results for pagination
         
         // display records

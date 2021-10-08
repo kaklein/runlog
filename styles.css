@@ -11,19 +11,19 @@ body {
     width: fit-content;
     height: fit-content;
     margin: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
-    border: 1px solid green;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 img {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     display: block;
 }
 
 h2 {
     text-align: center;
+    font-size: 1.2em;
 }
 
 .main-content {
@@ -83,12 +83,10 @@ input[type='number'] {
 }
 
 .form-container, .data-display-container, .quick-stats {
-    padding: 10px;
+    padding: 5px;
     width: fit-content;
     margin-left: auto;
     margin-right: auto;
-    margin-top: 50px;
-    margin-bottom: 50px;
 }
 
 .data-table {
@@ -116,15 +114,32 @@ table {
     padding: 15px;
 }
 
+th, td {
+    padding: 5px;
+}
+
 th {
     background-color: black;
     color: white;
+    vertical-align: center;
+    text-align: center;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
+    font-size: .9em;
 }
 
-th, td {
-    border: 1px solid black;
-    padding: 10px;
+td {
+    font-size: .9em;
     text-align: left;
+    border: 1px solid black;
+}
+
+.th-left-end {
+    border-left: 1px solid black;
+}
+
+.th-right-end {
+    border-right: 1px solid black;
 }
 
 .no-styling {
@@ -181,6 +196,7 @@ th, td {
     border-bottom: none;
     border-left: none;
     border-right: none;
+    height: 40px;
 }
 
 .page-number {
@@ -192,7 +208,7 @@ th, td {
     padding-top: 5px;
     padding-bottom: 5px;
     border: 1px solid #ffb800;
-    margin: 3px;
+    margin: 5px;
     border-radius: 5px;
 }
 
