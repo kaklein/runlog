@@ -1,5 +1,6 @@
-<h1 align="center"><img src="readme_images/logo.png" alt="Runlog" width="150"></h1>
-<p align="center">Runlog is a simple web app to log running activities and view past data.</p>
+<h1 align="center"> 🏃‍♀️ Runlog 🏃‍♂️ </h1>
+<p align="center"><img src="readme_images/logo.png" alt="Runlog" width="100"></p>
+<p align="center">A simple web app to log running activities and view past data.</p>
 
 <p align="center"><b> 🔸 HTML  🔸 CSS  🔸 JavaScript  🔸 PHP  🔸 MySQL</b></p>
 
