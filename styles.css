@@ -36,7 +36,6 @@ h2 {
 }
 
 #data-form {
-    text-align: right;
     display: inline-block;
     background-color: white;
     height: fit-content;
@@ -49,8 +48,11 @@ h2 {
 .form-field, .form-field-group {
     margin: 10px;
     padding: 10px;
-    display: inline-block;
     background-color: whitesmoke;
+}
+
+.form-field-submit {
+    margin: 10px;
 }
 
 .sub-form-field {
@@ -68,9 +70,10 @@ input[type='number'] {
 .button {
     background-color: #ffb800;
     padding: 10px;
-    margin: 10px;
+    width: 100%;
     border: 2px solid #ffcc6e;
     border-radius: 5px;
+    text-align: center;
 }
 
 .button:hover {
@@ -82,7 +85,7 @@ input[type='number'] {
     width: 150px;
 }
 
-.form-container, .data-display-container, .quick-stats {
+.form-container, .data-display-container, .quick-stats, #copyright {
     padding: 5px;
     width: fit-content;
     margin-left: auto;
@@ -116,6 +119,7 @@ table {
 
 th, td {
     padding: 5px;
+    width: 90px;
 }
 
 th {

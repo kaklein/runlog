@@ -63,7 +63,9 @@
                         </div>
                     </div>
 
-                    <input type="submit" name="add-run" value="Add Run" class="button">
+                    <div class="form-field-submit">
+                        <input type="submit" name="add-run" value="Add Run" class="button">
+                    </div>
                 </form>
             </div>
                 
@@ -97,6 +99,12 @@
                     displayUserStats($conn);
                 ?>
             </div>
+
+            <div id="copyright">
+            <p>
+                &copy; Katie Klein <script>document.write(new Date().getFullYear());</script>
+            </p>
+        </div>
         </div>
 
         <!-- function to submit form -->
