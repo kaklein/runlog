@@ -7,14 +7,6 @@
 
 <hr>
 
-### Table of Contents
-[Current Features](#current-features)<br>
-[Upcoming Features](#upcoming-features)<br>
-[Usage Instructions](#usage-instructions)<br>
-[Full page screenshot](#full-page-screenshot)<br>
-
-<hr>
-
 <h3> ✅ Current Features</h3>
 <ul>
   <li>Add a running activity to the database</li><br>
@@ -29,7 +21,7 @@
 </ul>
 <hr>
 
-### Upcoming Features
+<h3> 🔮 Upcoming Features</h3>
 <ul>
   <li>'Edit' button to make changes to any past activity</li>
   <li>Individual user registration and login</li>
@@ -39,7 +31,7 @@
 
 <hr>
 
-### Usage Instructions
+<h3> 📖 Usage Instructions</h3>
 <p><b>Note:</b> This application is not currently deployed to a web server. To use in its current state, you must have your own server set up.</p>
 
 <ol>
@@ -50,7 +42,7 @@
 
 <hr>
 
-### Full Page Screenshot
+<h3> 📷 Full Page Screenshot</h3>
 <div align="center">
   <img src="readme_images/runlog_full_page.png" alt="Full page screenshot" width="800">
 </div>
